@@ -1,0 +1,1140 @@
+
+editor_metadata = {
+	Entities = [
+		{
+			id = "0311d266-466e-434b-a7ae-67ac55383cfe"
+			layer = "Default"
+			name = "Default Shading Environment"
+			prefab = {
+				"$resource_name" = "core/stingray_renderer/environments/midday/midday_shading_environment"
+				"$resource_type" = "entity"
+			}
+		}
+	]
+	Flow = {
+		Connections = [
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Out"
+				FromNode = "9fdfdab0-0426-47dd-96cf-85580f37f807"
+				Priority = 0
+				ToItem = "In"
+				ToNode = "75fc8582-c9dc-4ba4-a554-b2c36d396356"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Unit"
+				FromNode = "10ac0a63-506b-4401-83cd-93e7dc589744"
+				ToItem = "Unit"
+				ToNode = "75fc8582-c9dc-4ba4-a554-b2c36d396356"
+				Type = "Unit"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Unit"
+				FromNode = "38a6bb9c-23f1-4203-8e70-92f5c7ee4942"
+				ToItem = "Camera Unit"
+				ToNode = "95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+				Type = "Unit"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Unit"
+				FromNode = "2e756bf2-595c-4e2d-a7fd-8981d454b43d"
+				ToItem = "Player Unit"
+				ToNode = "95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+				Type = "Unit"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Out"
+				FromNode = "533accb1-407e-48f1-8b9e-25356320ec14"
+				Priority = 0
+				ToItem = "Position Update Event"
+				ToNode = "95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Vector"
+				FromNode = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+				ToItem = "Gravity"
+				ToNode = "6ffbe436-850b-405b-aa01-b22bd79771f5"
+				Type = "Vector3"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Value"
+				FromNode = "9f0300f5-32bc-4a29-826f-91bf0cec31cc"
+				ToItem = "Z"
+				ToNode = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+				Type = "Float"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Value"
+				FromNode = "89ef9b24-b9d6-4a04-8d19-ff96492f2a56"
+				ToItem = "X"
+				ToNode = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+				Type = "Float"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Value"
+				FromNode = "89ef9b24-b9d6-4a04-8d19-ff96492f2a56"
+				ToItem = "Y"
+				ToNode = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+				Type = "Float"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Out"
+				FromNode = "9fdfdab0-0426-47dd-96cf-85580f37f807"
+				Priority = 0
+				ToItem = "In"
+				ToNode = "6ffbe436-850b-405b-aa01-b22bd79771f5"
+			}
+		]
+		Groups = [
+			{
+				Collapsed = false
+				Groups = [
+				]
+				Id = "b06aacce-d5b8-4722-bedf-fdfeb62e6f34"
+				Nodes = [
+					"75fc8582-c9dc-4ba4-a554-b2c36d396356"
+					"10ac0a63-506b-4401-83cd-93e7dc589744"
+				]
+				Title = "Set Camera"
+			}
+			{
+				Collapsed = false
+				Groups = [
+				]
+				Id = "ab1df7e5-7605-437b-9120-25ff5cabf33c"
+				Nodes = [
+					"95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+					"38a6bb9c-23f1-4203-8e70-92f5c7ee4942"
+					"2e756bf2-595c-4e2d-a7fd-8981d454b43d"
+					"533accb1-407e-48f1-8b9e-25356320ec14"
+				]
+				Title = "Camera Flow"
+			}
+		]
+		Nodes = [
+			{
+				Arguments = [
+					{
+						RawName = "Camera"
+						Type = "camera"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.InVariableCamera"
+						}
+					}
+					{
+						RawName = "Unit"
+						Type = "unit"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.InVariableUnit"
+							UseMyUnit = false
+						}
+					}
+				]
+				Brief = "Sets the active camera for the engine."
+				Class = "Stingray.Foundation.Flow.CustomScriptNode"
+				FlowNodesResource = "core/appkit/appkit"
+				FlowNodesResourceKey = "flow_nodes_resource"
+				Id = "75fc8582-c9dc-4ba4-a554-b2c36d396356"
+				InEvents = [
+					"In"
+				]
+				IsQuery = false
+				Name = "Set Active Camera"
+				NodeLocation = {
+					X = -800
+					Y = -300
+				}
+				OutEvents = [
+					"Out"
+				]
+				ReturnValues = [
+				]
+				Width = 160
+			}
+			{
+				Brief = "Passes an event when the level has been loaded into the world."
+				Class = "Stingray.Foundation.Flow.LevelLoaded"
+				Id = "9fdfdab0-0426-47dd-96cf-85580f37f807"
+				NodeLocation = {
+					X = -1460
+					Y = -280
+				}
+				Out = {
+				}
+				Title = "Level Loaded"
+				Width = 160
+			}
+			{
+				Brief = "References a unit constant"
+				Class = "Stingray.Foundation.Flow.LevelUnit"
+				Id = "2e756bf2-595c-4e2d-a7fd-8981d454b43d"
+				InEvents = [
+				]
+				InVariableNames = [
+				]
+				InVariables = [
+				]
+				NodeLocation = {
+					X = -1020
+					Y = -40
+				}
+				OutEvents = [
+				]
+				OutVariableNames = [
+				]
+				OutVariables = [
+				]
+				SetUnit = {
+					Id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
+				}
+				Title = "Level Unit"
+				Type = "content/Units/testPlayer"
+				Unit = {
+				}
+				Width = 160
+			}
+			{
+				Arguments = [
+				]
+				Brief = "Returns the current active camera from the engine."
+				Class = "Stingray.Foundation.Flow.CustomScriptNode"
+				FlowNodesResource = "core/appkit/appkit"
+				FlowNodesResourceKey = "flow_nodes_resource"
+				Id = "38a6bb9c-23f1-4203-8e70-92f5c7ee4942"
+				InEvents = [
+				]
+				IsQuery = true
+				Name = "Get Active Camera"
+				NodeLocation = {
+					X = -1020
+					Y = -120
+				}
+				OutEvents = [
+				]
+				ReturnValues = [
+					{
+						RawName = "Camera"
+						Type = "camera"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.OutVariableCamera"
+						}
+					}
+					{
+						RawName = "Unit"
+						Type = "unit"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.OutVariableUnit"
+						}
+					}
+				]
+				Width = 160
+			}
+			{
+				Brief = "References a unit constant"
+				Class = "Stingray.Foundation.Flow.LevelUnit"
+				Id = "10ac0a63-506b-4401-83cd-93e7dc589744"
+				InEvents = [
+				]
+				InVariableNames = [
+				]
+				InVariables = [
+				]
+				NodeLocation = {
+					X = -1000
+					Y = -360
+				}
+				OutEvents = [
+				]
+				OutVariableNames = [
+				]
+				OutVariables = [
+				]
+				SetUnit = {
+					Id = "066eacc8-ca30-4d07-ae74-798928a3341f"
+				}
+				Title = "Level Unit"
+				Type = "core/units/camera"
+				Unit = {
+				}
+				Width = 160
+			}
+			{
+				Brief = "Sets the global value for world gravity in the engine."
+				Class = "Stingray.Foundation.Flow.SetWorldGravity"
+				Gravity = {
+				}
+				Id = "6ffbe436-850b-405b-aa01-b22bd79771f5"
+				In = {
+				}
+				NodeLocation = {
+					X = -1180
+					Y = 140
+				}
+				Out = {
+				}
+				Title = "Set World Gravity"
+				Width = 160
+			}
+			{
+				Brief = "Passes an event at every update interval of the engine."
+				Class = "Stingray.Foundation.Flow.LevelUpdate"
+				Id = "533accb1-407e-48f1-8b9e-25356320ec14"
+				NodeLocation = {
+					X = -1020
+					Y = 40
+				}
+				Out = {
+				}
+				Title = "Level Update"
+				Width = 160
+			}
+			{
+				Brief = "Encapsulates a graph of logic stored in a separate flow resource file in the project."
+				Class = "Stingray.Foundation.Flow.FlowSubroutine"
+				Disable = {
+				}
+				Enable = {
+				}
+				Flow = {
+					Value = "script/Camera_Flow"
+				}
+				Id = "95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+				InEvents = [
+					"Position Update Event"
+				]
+				InVariableNames = [
+					"Camera Unit"
+					"Player Unit"
+				]
+				InVariables = [
+					{
+						Class = "Stingray.Foundation.Flow.InVariableUnit"
+						UseMyUnit = false
+					}
+					{
+						Class = "Stingray.Foundation.Flow.InVariableUnit"
+						UseMyUnit = false
+					}
+				]
+				NodeLocation = {
+					X = -800
+					Y = -100
+				}
+				OutEvents = [
+				]
+				OutVariableNames = [
+				]
+				OutVariables = [
+				]
+				Title = "Flow Subroutine"
+				Width = 160
+			}
+			{
+				Brief = "Constructs a vector from three separate X, Y and Z numeric components."
+				Class = "Stingray.Foundation.Flow.VectorFromComponents"
+				Id = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+				NodeLocation = {
+					X = -1440
+					Y = -20
+				}
+				Title = "Vector From Components"
+				Vector = {
+				}
+				Width = 160
+				X = {
+				}
+				Y = {
+				}
+				Z = {
+				}
+			}
+			{
+				Brief = "Creates a numeric constant."
+				Class = "Stingray.Foundation.Flow.NumericData"
+				Id = "89ef9b24-b9d6-4a04-8d19-ff96492f2a56"
+				NodeLocation = {
+					X = -1580
+					Y = 120
+				}
+				Set = {
+					Value = 0
+				}
+				Title = "Numeric Data"
+				Value = {
+				}
+				Width = 160
+			}
+			{
+				Brief = "Creates a numeric constant."
+				Class = "Stingray.Foundation.Flow.NumericData"
+				Id = "9f0300f5-32bc-4a29-826f-91bf0cec31cc"
+				NodeLocation = {
+					X = -1580
+					Y = 200
+				}
+				Set = {
+					Value = -5
+				}
+				Title = "Numeric Data"
+				Value = {
+				}
+				Width = 160
+			}
+		]
+	}
+	Groups = [
+	]
+	Layers = [
+		"Default"
+		"Background"
+	]
+	LevelObjectSets = {
+		NestedSetNamesBySetName = {
+		}
+		ObjectIdsBySetName = {
+		}
+		VisibleSetNames = [
+		]
+	}
+	LevelReferences = [
+	]
+	LightBakeSettings = {
+		Baker = "Beast"
+		ExcludedObjectSets = [
+		]
+		FilterGain = 20
+		FilterType = "Both"
+		IlluminationType = "Both"
+		Layers = [
+		]
+		LightmapType = "Standard"
+		MaxSamples = 96
+		MinSamples = 32
+		QualityPreset = "Low"
+		SkylightIntensityRGB = {
+			X = 1
+			Y = 1
+			Z = 1
+		}
+		TexelScale = 10
+		TotalPasses = 256
+		Variance = 0.5
+	}
+	LuaPluginObjects = [
+	]
+	Navmeshes = [
+	]
+	Notes = [
+	]
+	ParticleEffects = [
+	]
+	PositionMarkers = [
+	]
+	Prototypes = [
+	]
+	Scatter = {
+		PoolSettings = {
+		}
+		ScatterData = {
+		}
+	}
+	Settings = {
+		FrozenLayers = [
+			"Background"
+		]
+		HiddenLayers = [
+		]
+		HiddenObjects = [
+		]
+		LastHiddenObjects = [
+		]
+		SoundEnvironment = ""
+		TimpaniSoundEnvironment = "default"
+	}
+	Sounds = [
+	]
+	Splines = [
+	]
+	Stories = [
+	]
+	Triggers = [
+	]
+	Units = [
+		{
+			Cameras = {
+			}
+			Id = "1d35eba2-d408-4e23-bddf-6f5cbb9103f9"
+			Layer = "Default"
+			Lights = {
+				light = {
+					Baked = false
+					BoxMax = {
+						X = 10
+						Y = 10
+						Z = 10
+					}
+					BoxMin = {
+						X = -10
+						Y = 0
+						Z = -10
+					}
+					CastShadows = true
+					Color = {
+						A = 255
+						B = 255
+						G = 255
+						R = 255
+					}
+					Enabled = true
+					FalloffEnd = 8
+					FalloffStart = 0
+					Intensity = 4
+					Material = ""
+					MaterialResource = ""
+					ShadowDepthBias = 0.4
+					SpotAngleEnd = 60
+					SpotAngleStart = 0
+					Type = "directional"
+				}
+			}
+			Material = "core/units/light_source"
+			Materials = {
+			}
+			Name = "Sun Light"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 5
+			}
+			Rot = {
+				W = 0.5
+				X = -0.707106781186547
+				Y = -2.77555756156289E-17
+				Z = 0.5
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "core/units/light_source"
+		}
+		{
+			Cameras = {
+			}
+			Id = "71a4f39e-c38c-4293-ae25-10d9afdacb52"
+			Layer = "Background"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "Skydome"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Rot = {
+				W = 1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "core/editor_slave/units/skydome/skydome"
+		}
+		{
+			Cameras = {
+			}
+			Id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "testPlayer"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 2.5
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "content/Units/testPlayer"
+		}
+		{
+			Cameras = {
+			}
+			Id = "29165620-a98c-4705-b981-4689233c09e4"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "TestLandscape"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = -0.555831
+				Y = 6.267855
+				Z = 0
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "TestLandscape"
+		}
+		{
+			Cameras = {
+			}
+			Id = "066eacc8-ca30-4d07-ae74-798928a3341f"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "camera"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 10
+				Y = -20
+				Z = 5
+			}
+			Rot = {
+				W = -1
+				X = 1E-06
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1.000003
+				Y = 1.000005
+				Z = 1.00002
+			}
+			ScriptData = {
+			}
+			Type = "core/units/camera"
+		}
+	]
+	Volumes = [
+	]
+}
+entities = [
+	{
+		id = "0311d266-466e-434b-a7ae-67ac55383cfe"
+		name = "Default Shading Environment"
+		prefab = {
+			"$resource_name" = "core/stingray_renderer/environments/midday/midday_shading_environment"
+			"$resource_type" = "entity"
+		}
+	}
+]
+flow = {
+	nodes = [
+		{
+			flow_nodes_resource = "core/appkit/appkit"
+			id = "75fc8582-c9dc-4ba4-a554-b2c36d396356"
+			in_variables = {
+				Camera = {
+					type = "camera"
+				}
+				Unit = {
+					node = "10ac0a63-506b-4401-83cd-93e7dc589744"
+					type = "unit"
+					variable = "unit"
+				}
+			}
+			name = "Set Active Camera"
+			query = false
+			return_values = [
+			]
+			type = "custom_script_node"
+			variable_values = {
+				Camera = null
+				Unit = null
+			}
+			variables = [
+				{
+					name = "Camera"
+					type = "camera"
+				}
+				{
+					name = "Unit"
+					type = "unit"
+				}
+			]
+		}
+		{
+			id = "9fdfdab0-0426-47dd-96cf-85580f37f807"
+			out_events = {
+				out = [
+					{
+						event = 0
+						id = "75fc8582-c9dc-4ba4-a554-b2c36d396356:0"
+						node = "75fc8582-c9dc-4ba4-a554-b2c36d396356"
+					}
+					{
+						event = 0
+						id = "6ffbe436-850b-405b-aa01-b22bd79771f5:0"
+						node = "6ffbe436-850b-405b-aa01-b22bd79771f5"
+					}
+				]
+			}
+			type = "level_loaded"
+		}
+		{
+			id = "2e756bf2-595c-4e2d-a7fd-8981d454b43d"
+			in_event_index = [
+			]
+			out_event_index = [
+			]
+			out_variables = {
+				unit = {
+					type = "unit"
+				}
+			}
+			type = "level_unit"
+			variable_values = {
+				set_unit = {
+					id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
+				}
+				unit = null
+			}
+		}
+		{
+			flow_nodes_resource = "core/appkit/appkit"
+			id = "38a6bb9c-23f1-4203-8e70-92f5c7ee4942"
+			name = "Get Active Camera"
+			out_variables = {
+				Unit = {
+					type = "unit"
+				}
+			}
+			query = true
+			return_values = [
+				{
+					name = "Camera"
+					type = "camera"
+				}
+				{
+					name = "Unit"
+					type = "unit"
+				}
+			]
+			type = "custom_script_node"
+			variable_values = {
+				Camera = null
+				Unit = null
+			}
+			variables = [
+			]
+		}
+		{
+			id = "10ac0a63-506b-4401-83cd-93e7dc589744"
+			in_event_index = [
+			]
+			out_event_index = [
+			]
+			out_variables = {
+				unit = {
+					type = "unit"
+				}
+			}
+			type = "level_unit"
+			variable_values = {
+				set_unit = {
+					id = "066eacc8-ca30-4d07-ae74-798928a3341f"
+				}
+				unit = null
+			}
+		}
+		{
+			id = "6ffbe436-850b-405b-aa01-b22bd79771f5"
+			in_variables = {
+				gravity = {
+					node = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+					type = "vector3"
+					variable = "vector"
+				}
+			}
+			type = "set_world_gravity"
+			variable_values = {
+				gravity = null
+			}
+		}
+		{
+			id = "533accb1-407e-48f1-8b9e-25356320ec14"
+			out_events = {
+				out = [
+					{
+						event = 0
+						id = "95dee43b-aefe-4aab-b0dd-5d24be6763c1:0"
+						node = "95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+					}
+				]
+			}
+			type = "level_update"
+		}
+		{
+			id = "95dee43b-aefe-4aab-b0dd-5d24be6763c1"
+			in_event_index = [
+				"Position Update Event"
+			]
+			in_variables = {
+				camera_unit = {
+					node = "38a6bb9c-23f1-4203-8e70-92f5c7ee4942"
+					type = "unit"
+					variable = "Unit"
+				}
+				player_unit = {
+					node = "2e756bf2-595c-4e2d-a7fd-8981d454b43d"
+					type = "unit"
+					variable = "unit"
+				}
+			}
+			out_event_index = [
+			]
+			type = "flow_subroutine"
+			variable_values = {
+				camera_unit = null
+				flow = "script/Camera_Flow"
+				player_unit = null
+			}
+		}
+		{
+			id = "66c09a9f-e4b9-47b3-8824-81c0a2b2a831"
+			in_variables = {
+				x = {
+					node = "89ef9b24-b9d6-4a04-8d19-ff96492f2a56"
+					type = "float"
+					variable = "value"
+				}
+				y = {
+					node = "89ef9b24-b9d6-4a04-8d19-ff96492f2a56"
+					type = "float"
+					variable = "value"
+				}
+				z = {
+					node = "9f0300f5-32bc-4a29-826f-91bf0cec31cc"
+					type = "float"
+					variable = "value"
+				}
+			}
+			out_variables = {
+				vector = {
+					type = "vector3"
+				}
+			}
+			type = "vector_from_components"
+			variable_values = {
+				vector = null
+				x = null
+				y = null
+				z = null
+			}
+		}
+		{
+			id = "89ef9b24-b9d6-4a04-8d19-ff96492f2a56"
+			out_variables = {
+				value = {
+					type = "float"
+				}
+			}
+			type = "numeric_data"
+			variable_values = {
+				set = 0
+				value = null
+			}
+		}
+		{
+			id = "9f0300f5-32bc-4a29-826f-91bf0cec31cc"
+			out_variables = {
+				value = {
+					type = "float"
+				}
+			}
+			type = "numeric_data"
+			variable_values = {
+				set = -5
+				value = null
+			}
+		}
+	]
+}
+level_references = [
+]
+level_settings = {
+	num_background_units = 0
+	sound_environment = ""
+	timpani_sound_environment = "default"
+}
+navmeshes = [
+]
+object_sets = {
+}
+particle_effects = [
+]
+prototypes = [
+]
+scatter = [
+]
+sounds = [
+]
+splines = [
+]
+stories = [
+]
+triggers = [
+]
+units = [
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "1d35eba2-d408-4e23-bddf-6f5cbb9103f9"
+		lights = {
+			light = {
+				baked = false
+				box_max = [
+					10
+					10
+					10
+				]
+				box_min = [
+					-10
+					0
+					-10
+				]
+				cast_shadows = true
+				color = [
+					1
+					1
+					1
+				]
+				enabled = true
+				falloff_end = 8
+				falloff_start = 0
+				intensity = 4
+				material = ""
+				shadow_depth_bias = 0.4
+				spot_angle_end = 1.0471975511966
+				spot_angle_start = 0
+				type = "directional"
+			}
+		}
+		material = "core/units/light_source"
+		materials = {
+		}
+		name = "Sun Light"
+		pos = [
+			0
+			0
+			5
+		]
+		rot = [
+			-0.707106781186547
+			-2.77555756156289E-17
+			0.5
+			0.5
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		type = "core/units/light_source"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "71a4f39e-c38c-4293-ae25-10d9afdacb52"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "Skydome"
+		pos = [
+			0
+			0
+			0
+		]
+		rot = [
+			0
+			0
+			0
+			1
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		type = "core/editor_slave/units/skydome/skydome"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "testPlayer"
+		pos = [
+			0
+			0
+			2.5
+		]
+		rot = [
+			0
+			0
+			0
+			-1
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		type = "content/Units/testPlayer"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "29165620-a98c-4705-b981-4689233c09e4"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "TestLandscape"
+		pos = [
+			-0.555831
+			6.267855
+			0
+		]
+		rot = [
+			0
+			0
+			0
+			-1
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		type = "TestLandscape"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "066eacc8-ca30-4d07-ae74-798928a3341f"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "camera"
+		pos = [
+			10
+			-20
+			5
+		]
+		rot = [
+			1E-06
+			0
+			0
+			-1
+		]
+		scl = [
+			1.000003
+			1.000005
+			1.00002
+		]
+		type = "core/units/camera"
+	}
+]
+volumes = [
+]
