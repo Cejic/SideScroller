@@ -1,0 +1,158 @@
+
+Connections = [
+	{
+		Class = "Stingray.Flow.EventConnection"
+		FromItem = "Enter"
+		FromNode = "11a9dae5-57de-4976-8994-667ace07320b"
+		Id = "02407c7f-b480-4582-96c2-9a46cd5819c7"
+		Priority = 0
+		ToItem = "In"
+		ToNode = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+	}
+	{
+		Class = "Stingray.Flow.EventConnection"
+		FromItem = "Enter"
+		FromNode = "8d881e31-cc29-4853-ae90-2a611cfb2572"
+		Id = "780c7385-8fe9-4459-a2ec-541851f75c6b"
+		Priority = 0
+		ToItem = "In"
+		ToNode = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+	}
+	{
+		Class = "Stingray.Flow.VariableConnection"
+		FromItem = "Value"
+		FromNode = "11c9005d-d431-4138-9715-58f522821489"
+		Id = "fc62c357-0ec7-444f-961d-f2aa388c28e2"
+		ToItem = "Color"
+		ToNode = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+		Type = "Vector3"
+	}
+	{
+		Class = "Stingray.Flow.VariableConnection"
+		FromItem = "Value"
+		FromNode = "ff22f4e3-2b99-4a4d-bd37-8c4eb9e87173"
+		Id = "6e07e654-fa42-45a6-bc06-3a0bc82ab0d6"
+		ToItem = "Text"
+		ToNode = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+		Type = "String"
+	}
+	{
+		Class = "Stingray.Flow.EventConnection"
+		FromItem = "Enter"
+		FromNode = "53aca092-3f74-445e-9174-482649565fca"
+		Id = "2260f77a-e22e-4d66-a6d2-86ad7fadb9fc"
+		Priority = 0
+		ToItem = "In"
+		ToNode = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+	}
+	{
+		Class = "Stingray.Flow.EventConnection"
+		FromItem = "Leave"
+		FromNode = "53aca092-3f74-445e-9174-482649565fca"
+		Id = "147951ca-b253-4d72-a0e8-ccc61fbea147"
+		Priority = 0
+		ToItem = "In"
+		ToNode = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+	}
+]
+Groups = [
+]
+Nodes = [
+	{
+		Arguments = [
+			{
+				RawName = "Label"
+				Type = "string"
+				Variable = {
+					Class = "Stingray.Flow.InVariableString"
+				}
+			}
+			{
+				RawName = "Color"
+				Type = "vector3"
+				Variable = {
+					Class = "Stingray.Flow.InVariableVector3"
+				}
+			}
+			{
+				RawName = "Text"
+				Type = "string"
+				Variable = {
+					Class = "Stingray.Flow.InVariableString"
+				}
+			}
+		]
+		Class = "Stingray.Flow.CustomScriptNode"
+		FlowNodesResource = "core/appkit/appkit"
+		FlowNodesResourceKey = "flow_nodes_resource"
+		Id = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+		InEvents = [
+			"In"
+		]
+		IsQuery = false
+		Name = "Print To Screen"
+		NodeLocation = {
+			X = -200
+			Y = -100
+		}
+		OutEvents = [
+			"Out"
+		]
+		ReturnValues = [
+		]
+		Width = 160
+	}
+	{
+		Class = "Stingray.Flow.RandomVector"
+		Id = "11c9005d-d431-4138-9715-58f522821489"
+		Max = {
+			Value = "255 255 255"
+		}
+		Min = {
+			Value = "0 0 0"
+		}
+		NodeLocation = {
+			X = -420
+			Y = -280
+		}
+		Value = {
+		}
+		Width = 160
+	}
+	{
+		Class = "Stingray.Flow.StringData"
+		Id = "ff22f4e3-2b99-4a4d-bd37-8c4eb9e87173"
+		NodeLocation = {
+			X = -440
+			Y = 40
+		}
+		Set = {
+			Value = "YOU WIN!"
+		}
+		Value = {
+		}
+		Width = 160
+	}
+	{
+		Actor = {
+			Value = "Goal"
+		}
+		Class = "Stingray.Flow.PhysicsTrigger"
+		Enter = {
+		}
+		Id = "53aca092-3f74-445e-9174-482649565fca"
+		Leave = {
+		}
+		NodeLocation = {
+			X = -660
+			Y = -160
+		}
+		TouchedActor = {
+		}
+		TouchingActor = {
+		}
+		TouchingUnit = {
+		}
+		Width = 140
+	}
+]

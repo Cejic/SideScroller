@@ -9,7 +9,7 @@ actors = [
 			{
 				material = "default"
 				shape = "Cube_Primitive2"
-				template = "character"
+				template = "default"
 				type = "box"
 			}
 		]

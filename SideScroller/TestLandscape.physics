@@ -9,7 +9,7 @@ actors = [
 			{
 				material = "default"
 				shape = "terrain"
-				template = "character_trigger"
+				template = "default"
 				type = "height_field"
 			}
 		]

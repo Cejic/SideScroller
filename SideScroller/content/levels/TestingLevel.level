@@ -93,6 +93,54 @@ editor_metadata = {
 				ToItem = "In"
 				ToNode = "6ffbe436-850b-405b-aa01-b22bd79771f5"
 			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Value"
+				FromNode = "1208544c-96a2-4808-813f-21dfebc7c010"
+				ToItem = "Text"
+				ToNode = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+				Type = "String"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.VariableConnection"
+				FromItem = "Value"
+				FromNode = "0bbe0026-d8db-43a3-a9ad-503dd484d076"
+				ToItem = "Color"
+				ToNode = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+				Type = "Vector3"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Touched"
+				FromNode = "f5224d6a-b87f-43b9-b569-7801d36c5681"
+				Priority = 0
+				ToItem = "In"
+				ToNode = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Out"
+				FromNode = "9fdfdab0-0426-47dd-96cf-85580f37f807"
+				Priority = 0
+				ToItem = "Enable"
+				ToNode = "f5224d6a-b87f-43b9-b569-7801d36c5681"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Touched"
+				FromNode = "f5224d6a-b87f-43b9-b569-7801d36c5681"
+				Priority = 0
+				ToItem = "In"
+				ToNode = "b34e7146-7fce-4a0f-9697-8070620a4bc5"
+			}
+			{
+				Class = "Stingray.Foundation.Flow.EventConnection"
+				FromItem = "Out"
+				FromNode = "b34e7146-7fce-4a0f-9697-8070620a4bc5"
+				Priority = 0
+				ToItem = "In"
+				ToNode = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+			}
 		]
 		Groups = [
 			{
@@ -165,8 +213,8 @@ editor_metadata = {
 				Class = "Stingray.Foundation.Flow.LevelLoaded"
 				Id = "9fdfdab0-0426-47dd-96cf-85580f37f807"
 				NodeLocation = {
-					X = -1460
-					Y = -280
+					X = -1560
+					Y = 460
 				}
 				Out = {
 				}
@@ -184,8 +232,8 @@ editor_metadata = {
 				InVariables = [
 				]
 				NodeLocation = {
-					X = -1020
-					Y = -40
+					X = -1000
+					Y = 120
 				}
 				OutEvents = [
 				]
@@ -215,8 +263,8 @@ editor_metadata = {
 				IsQuery = true
 				Name = "Get Active Camera"
 				NodeLocation = {
-					X = -1020
-					Y = -120
+					X = -1000
+					Y = 40
 				}
 				OutEvents = [
 				]
@@ -276,8 +324,8 @@ editor_metadata = {
 				In = {
 				}
 				NodeLocation = {
-					X = -1180
-					Y = 140
+					X = -1240
+					Y = -40
 				}
 				Out = {
 				}
@@ -289,8 +337,8 @@ editor_metadata = {
 				Class = "Stingray.Foundation.Flow.LevelUpdate"
 				Id = "533accb1-407e-48f1-8b9e-25356320ec14"
 				NodeLocation = {
-					X = -1020
-					Y = 40
+					X = -1000
+					Y = 200
 				}
 				Out = {
 				}
@@ -326,8 +374,8 @@ editor_metadata = {
 					}
 				]
 				NodeLocation = {
-					X = -800
-					Y = -100
+					X = -780
+					Y = 60
 				}
 				OutEvents = [
 				]
@@ -387,6 +435,145 @@ editor_metadata = {
 				Title = "Numeric Data"
 				Value = {
 				}
+				Width = 160
+			}
+			{
+				Arguments = [
+					{
+						RawName = "Text"
+						Type = "string"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.InVariableString"
+						}
+					}
+					{
+						RawName = "Label"
+						Type = "string"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.InVariableString"
+						}
+					}
+					{
+						RawName = "Color"
+						Type = "vector3"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.InVariableVector3"
+						}
+					}
+				]
+				Brief = "Prints the combined label and text on the screen."
+				Class = "Stingray.Foundation.Flow.CustomScriptNode"
+				FlowNodesResource = "core/appkit/appkit"
+				FlowNodesResourceKey = "flow_nodes_resource"
+				Id = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+				InEvents = [
+					"In"
+				]
+				IsQuery = false
+				Name = "Print To Screen"
+				NodeLocation = {
+					X = -440
+					Y = 500
+				}
+				OutEvents = [
+					"Out"
+				]
+				ReturnValues = [
+				]
+				Width = 160
+			}
+			{
+				Brief = "Creates a string constant."
+				Class = "Stingray.Foundation.Flow.StringData"
+				Id = "1208544c-96a2-4808-813f-21dfebc7c010"
+				NodeLocation = {
+					X = -670
+					Y = 708
+				}
+				Set = {
+					Value = "YOU WIN!"
+				}
+				Title = "String Data"
+				Value = {
+				}
+				Width = 160
+			}
+			{
+				Brief = "Returns a random vector value between the min and max values."
+				Class = "Stingray.Foundation.Flow.RandomVector"
+				Id = "0bbe0026-d8db-43a3-a9ad-503dd484d076"
+				Max = {
+					Value = "255 255 255"
+				}
+				Min = {
+					Value = "0 0 0"
+				}
+				NodeLocation = {
+					X = -720
+					Y = 400
+				}
+				Title = "Random Vector"
+				Value = {
+				}
+				Width = 160
+			}
+			{
+				Brief = "Fires an event when a physics actor touches the trigger volume. Returns touching actor and touching unit."
+				Class = "Stingray.Foundation.Flow.Trigger"
+				Disable = {
+				}
+				Enable = {
+				}
+				Id = "f5224d6a-b87f-43b9-b569-7801d36c5681"
+				NodeLocation = {
+					X = -1143
+					Y = 564
+				}
+				Shape = {
+					Id = "f5f856db-723a-4f7b-8c21-57aa47de0185"
+				}
+				Title = "Trigger"
+				Touched = {
+				}
+				TouchingActor = {
+				}
+				TouchingUnit = {
+				}
+				Untouched = {
+				}
+				Width = 160
+			}
+			{
+				Arguments = [
+					{
+						RawName = "Name"
+						Type = "resource"
+						Variable = {
+							Class = "Stingray.Foundation.Flow.InVariableResource"
+							Extension = "level"
+							Value = "content/levels/TestingLevel"
+						}
+					}
+				]
+				Brief = "Switches the currently active level in the world to the specified level."
+				Class = "Stingray.Foundation.Flow.CustomScriptNode"
+				FlowNodesResource = "core/appkit/appkit"
+				FlowNodesResourceKey = "flow_nodes_resource"
+				Id = "b34e7146-7fce-4a0f-9697-8070620a4bc5"
+				InEvents = [
+					"In"
+				]
+				IsQuery = false
+				Name = "Change Level"
+				NodeLocation = {
+					X = -860
+					Y = 740
+				}
+				OutEvents = [
+					"Out"
+				]
+				ReturnValues = [
+				]
 				Width = 160
 			}
 		]
@@ -467,6 +654,39 @@ editor_metadata = {
 	Stories = [
 	]
 	Triggers = [
+		{
+			ActorTemplate = "static"
+			Id = "f5f856db-723a-4f7b-8c21-57aa47de0185"
+			Layer = "Default"
+			Name = "trigger"
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 25
+				Y = 0
+				Z = 0
+			}
+			Radius = {
+				X = 0.5
+				Y = 0.5
+				Z = 3
+			}
+			Rot = {
+				W = 1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ShapeTemplate = "trigger"
+		}
 	]
 	Units = [
 		{
@@ -629,8 +849,8 @@ editor_metadata = {
 				Z = 0
 			}
 			Pos = {
-				X = -0.555831
-				Y = 6.267855
+				X = 0
+				Y = 0
 				Z = 0
 			}
 			Rot = {
@@ -684,6 +904,43 @@ editor_metadata = {
 			ScriptData = {
 			}
 			Type = "core/units/camera"
+		}
+		{
+			Cameras = {
+			}
+			Id = "3c6b9b46-b062-4980-922f-3f8d48c08227"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "Goal"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 25
+				Y = 0
+				Z = 0
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 0.5
+				Y = 0.5
+				Z = 3
+			}
+			ScriptData = {
+			}
+			Type = "content/Units/Goal"
 		}
 	]
 	Volumes = [
@@ -747,6 +1004,11 @@ flow = {
 						event = 0
 						id = "6ffbe436-850b-405b-aa01-b22bd79771f5:0"
 						node = "6ffbe436-850b-405b-aa01-b22bd79771f5"
+					}
+					{
+						event = 0
+						id = "f5224d6a-b87f-43b9-b569-7801d36c5681:0"
+						node = "f5224d6a-b87f-43b9-b569-7801d36c5681"
 					}
 				]
 			}
@@ -929,6 +1191,172 @@ flow = {
 				value = null
 			}
 		}
+		{
+			flow_nodes_resource = "core/appkit/appkit"
+			id = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+			in_variables = {
+				Color = {
+					node = "0bbe0026-d8db-43a3-a9ad-503dd484d076"
+					type = "vector3"
+					variable = "value"
+				}
+				Label = {
+					type = "string"
+				}
+				Text = {
+					node = "1208544c-96a2-4808-813f-21dfebc7c010"
+					type = "string"
+					variable = "value"
+				}
+			}
+			name = "Print To Screen"
+			query = false
+			return_values = [
+			]
+			type = "custom_script_node"
+			variable_values = {
+				Color = null
+				Label = null
+				Text = null
+			}
+			variables = [
+				{
+					name = "Text"
+					type = "string"
+				}
+				{
+					name = "Label"
+					type = "string"
+				}
+				{
+					name = "Color"
+					type = "vector3"
+				}
+			]
+		}
+		{
+			id = "1208544c-96a2-4808-813f-21dfebc7c010"
+			out_variables = {
+				value = {
+					type = "string"
+				}
+			}
+			type = "string_data"
+			variable_values = {
+				set = "YOU WIN!"
+				value = null
+			}
+		}
+		{
+			id = "0bbe0026-d8db-43a3-a9ad-503dd484d076"
+			in_variables = {
+				max = {
+					type = "vector3"
+				}
+				min = {
+					type = "vector3"
+				}
+			}
+			out_variables = {
+				value = {
+					type = "vector3"
+				}
+			}
+			type = "random_vector"
+			variable_values = {
+				max = [
+					255
+					255
+					255
+				]
+				min = [
+					0
+					0
+					0
+				]
+				value = null
+			}
+		}
+		{
+			id = "f5224d6a-b87f-43b9-b569-7801d36c5681"
+			out_events = {
+				touched = [
+					{
+						event = 0
+						id = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf:0"
+						node = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+					}
+					{
+						event = 0
+						id = "b34e7146-7fce-4a0f-9697-8070620a4bc5:0"
+						node = "b34e7146-7fce-4a0f-9697-8070620a4bc5"
+					}
+				]
+			}
+			type = "trigger"
+			variable_values = {
+				shape = {
+					actor_template = "static"
+					id = "f5f856db-723a-4f7b-8c21-57aa47de0185"
+					pos = [
+						25
+						0
+						0
+					]
+					radius = [
+						0.5
+						0.5
+						3
+					]
+					rot = [
+						0
+						0
+						0
+						1
+					]
+					scale = [
+						1
+						1
+						1
+					]
+					shape_template = "trigger"
+				}
+				touching_actor = null
+				touching_unit = null
+			}
+		}
+		{
+			flow_nodes_resource = "core/appkit/appkit"
+			id = "b34e7146-7fce-4a0f-9697-8070620a4bc5"
+			in_variables = {
+				Name = {
+					type = "string"
+				}
+			}
+			name = "Change Level"
+			out_events = {
+				Out = [
+					{
+						event = 0
+						id = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf:0"
+						node = "bde650f9-4cf2-44b1-ad61-11efedc9dbbf"
+					}
+				]
+			}
+			query = false
+			return_values = [
+			]
+			type = "custom_script_node"
+			variable_values = {
+				Name = "content/levels/TestingLevel"
+			}
+			variables = [
+				{
+					name = "Name"
+					type = "string"
+				}
+			]
+		}
 	]
 }
 level_references = [
@@ -955,6 +1383,32 @@ splines = [
 stories = [
 ]
 triggers = [
+	{
+		actor_template = "static"
+		id = "f5f856db-723a-4f7b-8c21-57aa47de0185"
+		pos = [
+			25
+			0
+			0
+		]
+		radius = [
+			0.5
+			0.5
+			3
+		]
+		rot = [
+			0
+			0
+			0
+			1
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		shape_template = "trigger"
+	}
 ]
 units = [
 	{
@@ -1088,8 +1542,8 @@ units = [
 		}
 		name = "TestLandscape"
 		pos = [
-			-0.555831
-			6.267855
+			0
+			0
 			0
 		]
 		rot = [
@@ -1134,6 +1588,36 @@ units = [
 			1.00002
 		]
 		type = "core/units/camera"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "3c6b9b46-b062-4980-922f-3f8d48c08227"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "Goal"
+		pos = [
+			25
+			0
+			0
+		]
+		rot = [
+			0
+			0
+			0
+			-1
+		]
+		scl = [
+			0.5
+			0.5
+			3
+		]
+		type = "content/Units/Goal"
 	}
 ]
 volumes = [

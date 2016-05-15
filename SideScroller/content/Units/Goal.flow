@@ -1,0 +1,122 @@
+
+nodes = [
+	{
+		flow_nodes_resource = "core/appkit/appkit"
+		id = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+		in_variables = {
+			Color = {
+				node = "11c9005d-d431-4138-9715-58f522821489"
+				type = "vector3"
+				variable = "value"
+			}
+			Label = {
+				type = "string"
+			}
+			Text = {
+				node = "ff22f4e3-2b99-4a4d-bd37-8c4eb9e87173"
+				type = "string"
+				variable = "value"
+			}
+		}
+		name = "Print To Screen"
+		query = false
+		return_values = [
+		]
+		type = "custom_script_node"
+		variable_values = {
+			Color = null
+			Label = null
+			Text = null
+		}
+		variables = [
+			{
+				name = "Label"
+				type = "string"
+			}
+			{
+				name = "Color"
+				type = "vector3"
+			}
+			{
+				name = "Text"
+				type = "string"
+			}
+		]
+	}
+	{
+		id = "11c9005d-d431-4138-9715-58f522821489"
+		in_variables = {
+			max = {
+				type = "vector3"
+			}
+			min = {
+				type = "vector3"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "vector3"
+			}
+		}
+		type = "random_vector"
+		variable_values = {
+			max = [
+				255
+				255
+				255
+			]
+			min = [
+				0
+				0
+				0
+			]
+			value = null
+		}
+	}
+	{
+		id = "ff22f4e3-2b99-4a4d-bd37-8c4eb9e87173"
+		out_variables = {
+			value = {
+				type = "string"
+			}
+		}
+		type = "string_data"
+		variable_values = {
+			set = "YOU WIN!"
+			value = null
+		}
+	}
+	{
+		id = "53aca092-3f74-445e-9174-482649565fca"
+		out_events = {
+			enter = [
+				{
+					event = 0
+					id = "5d0e9546-19db-48fb-822b-c752b6039ae7:0"
+					node = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+				}
+			]
+			leave = [
+				{
+					event = 0
+					id = "5d0e9546-19db-48fb-822b-c752b6039ae7:0"
+					node = "5d0e9546-19db-48fb-822b-c752b6039ae7"
+				}
+			]
+		}
+		type = "physics_trigger"
+		variable_values = {
+			actor = "Goal"
+			touched_actor = null
+			touching_actor = null
+			touching_unit = null
+		}
+	}
+	{
+		id = "11111111-2222-3333-4444-555555555555"
+		type = "unit_spawned"
+		variable_values = {
+			unit = null
+		}
+	}
+]
