@@ -487,8 +487,8 @@ editor_metadata = {
 				Class = "Stingray.Foundation.Flow.StringData"
 				Id = "1208544c-96a2-4808-813f-21dfebc7c010"
 				NodeLocation = {
-					X = -670
-					Y = 708
+					X = -680
+					Y = 580
 				}
 				Set = {
 					Value = "YOU WIN!"
@@ -566,8 +566,8 @@ editor_metadata = {
 				IsQuery = false
 				Name = "Change Level"
 				NodeLocation = {
-					X = -860
-					Y = 740
+					X = -900
+					Y = 540
 				}
 				OutEvents = [
 					"Out"
@@ -941,6 +941,43 @@ editor_metadata = {
 			ScriptData = {
 			}
 			Type = "content/Units/Goal"
+		}
+		{
+			Cameras = {
+			}
+			Id = "e503d0ee-2487-4431-8e8c-14ff910698f4"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "cone_primitive"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 15
+				Y = 0
+				Z = -0.0887
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "core/units/primitives/cone_primitive"
 		}
 	]
 	Volumes = [
@@ -1618,6 +1655,36 @@ units = [
 			3
 		]
 		type = "content/Units/Goal"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "e503d0ee-2487-4431-8e8c-14ff910698f4"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "cone_primitive"
+		pos = [
+			15
+			0
+			-0.0887
+		]
+		rot = [
+			0
+			0
+			0
+			-1
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		type = "core/units/primitives/cone_primitive"
 	}
 ]
 volumes = [
