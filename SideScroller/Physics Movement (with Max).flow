@@ -1,0 +1,345 @@
+
+nodes = [
+	{
+		id = "3e5ec6b6-2230-4892-a625-50cd7bc0503c"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 0
+			value = null
+		}
+	}
+	{
+		id = "f3f00279-f825-4281-84b9-8ec77c4eba1e"
+		in_variables = {
+			x = {
+				node = "8f205fb9-5de3-488d-8316-1e263c77e32f"
+				type = "float"
+				variable = "numeric"
+			}
+			y = {
+				node = "3e5ec6b6-2230-4892-a625-50cd7bc0503c"
+				type = "float"
+				variable = "value"
+			}
+			z = {
+				node = "3e5ec6b6-2230-4892-a625-50cd7bc0503c"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			vector = {
+				type = "vector3"
+			}
+		}
+		type = "vector_from_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "cdcb27c4-d2ed-495e-8be2-af4b76f69b9c"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 0
+			value = null
+		}
+	}
+	{
+		id = "8618b819-1771-469e-bace-1e778d6718ec"
+		in_variables = {
+			x = {
+				node = "6e4390eb-afd6-4dd7-a873-dc0cd8e0e22d"
+				type = "float"
+				variable = "numeric"
+			}
+			y = {
+				node = "cdcb27c4-d2ed-495e-8be2-af4b76f69b9c"
+				type = "float"
+				variable = "value"
+			}
+			z = {
+				node = "cdcb27c4-d2ed-495e-8be2-af4b76f69b9c"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			vector = {
+				type = "vector3"
+			}
+		}
+		type = "vector_from_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "ccd0a0f3-80b9-454c-8a54-7b367c77f041"
+		in_variables = {
+			actor = {
+				node = "536f3890-6a56-468d-8ee5-dc50849540b6"
+				type = "actor"
+				variable = "actor"
+			}
+			unit = {
+				node = "11111111-2222-3333-4444-555555555555"
+				type = "unit"
+				variable = "unit"
+			}
+			velocity = {
+				node = "f3f00279-f825-4281-84b9-8ec77c4eba1e"
+				type = "vector3"
+				variable = "vector"
+			}
+		}
+		type = "set_actor_velocity"
+		variable_values = {
+			actor = null
+			unit = null
+			velocity = null
+		}
+	}
+	{
+		id = "5c3accba-42b1-40af-9539-8dc099cb9955"
+		in_variables = {
+			condition = {
+				type = "bool"
+			}
+		}
+		out_events = {
+			false = [
+				{
+					event = 0
+					id = "1cdff370-4719-4178-a1ce-9b97d7fb3555:0"
+					node = "1cdff370-4719-4178-a1ce-9b97d7fb3555"
+				}
+			]
+			true = [
+				{
+					event = 0
+					id = "ccd0a0f3-80b9-454c-8a54-7b367c77f041:0"
+					node = "ccd0a0f3-80b9-454c-8a54-7b367c77f041"
+				}
+			]
+		}
+		type = "branch"
+		variable_values = {
+			condition = null
+		}
+	}
+	{
+		id = "1cdff370-4719-4178-a1ce-9b97d7fb3555"
+		in_variables = {
+			actor = {
+				node = "536f3890-6a56-468d-8ee5-dc50849540b6"
+				type = "actor"
+				variable = "actor"
+			}
+			at = {
+				type = "vector3"
+			}
+			mass = {
+				node = "3dce35d2-4e52-49b3-a808-418c1dfc90c3"
+				type = "float"
+				variable = "value"
+			}
+			unit = {
+				node = "11111111-2222-3333-4444-555555555555"
+				type = "unit"
+				variable = "unit"
+			}
+			velocity = {
+				node = "8618b819-1771-469e-bace-1e778d6718ec"
+				type = "vector3"
+				variable = "vector"
+			}
+		}
+		type = "push_actor"
+		variable_values = {
+			actor = null
+			at = null
+			mass = null
+			unit = null
+			velocity = null
+		}
+	}
+	{
+		id = "7b82883b-fe3f-4427-8243-b3088e2d83c6"
+		in_variables = {
+			a = {
+				node = "8f205fb9-5de3-488d-8316-1e263c77e32f"
+				type = "float"
+				variable = "numeric"
+			}
+			b = {
+				node = "d3ed07ea-3e1f-4ad1-adaf-ecb598fd731e"
+				type = "float"
+				variable = "x"
+			}
+		}
+		out_events = {
+			less_or_equal = [
+				{
+					event = 0
+					id = "5c3accba-42b1-40af-9539-8dc099cb9955:0"
+					node = "5c3accba-42b1-40af-9539-8dc099cb9955"
+				}
+			]
+		}
+		type = "compare_node"
+		variable_values = {
+			a = null
+			b = null
+		}
+	}
+	{
+		id = "3dce35d2-4e52-49b3-a808-418c1dfc90c3"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 1
+			value = null
+		}
+	}
+	{
+		id = "fbf8d496-f7cd-47a6-8419-9873fc851626"
+		out_events = {
+			out = [
+				{
+					event = 0
+					id = "1cdff370-4719-4178-a1ce-9b97d7fb3555:0"
+					node = "1cdff370-4719-4178-a1ce-9b97d7fb3555"
+				}
+			]
+		}
+		type = "external_event"
+		variable_values = {
+			event_name = "Start Action"
+		}
+	}
+	{
+		id = "7f8c9ae6-117d-42ce-a41f-94ec0942e07e"
+		out_events = {
+			out = [
+				{
+					event = 0
+					id = "7b82883b-fe3f-4427-8243-b3088e2d83c6:0"
+					node = "7b82883b-fe3f-4427-8243-b3088e2d83c6"
+				}
+			]
+		}
+		type = "external_event"
+		variable_values = {
+			event_name = "Continue Action"
+		}
+	}
+	{
+		id = "536f3890-6a56-468d-8ee5-dc50849540b6"
+		out_variables = {
+			actor = {
+				type = "actor"
+			}
+		}
+		type = "external_input_actor"
+		variable_values = {
+			actor = null
+			name = "Character"
+		}
+	}
+	{
+		id = "6e4390eb-afd6-4dd7-a873-dc0cd8e0e22d"
+		out_variables = {
+			numeric = {
+				type = "float"
+			}
+		}
+		type = "external_input_numeric"
+		variable_values = {
+			name = "Speed Scaling"
+			numeric = null
+		}
+	}
+	{
+		id = "8f205fb9-5de3-488d-8316-1e263c77e32f"
+		out_variables = {
+			numeric = {
+				type = "float"
+			}
+		}
+		type = "external_input_numeric"
+		variable_values = {
+			name = "Max Speed"
+			numeric = null
+		}
+	}
+	{
+		id = "232c0c99-f795-45b8-aa07-ecaf1aff16aa"
+		in_variables = {
+			actor = {
+				node = "536f3890-6a56-468d-8ee5-dc50849540b6"
+				type = "actor"
+				variable = "actor"
+			}
+		}
+		out_variables = {
+			velocity = {
+				type = "vector3"
+			}
+		}
+		type = "get_actor_velocity"
+		variable_values = {
+			actor = null
+			velocity = null
+		}
+	}
+	{
+		id = "d3ed07ea-3e1f-4ad1-adaf-ecb598fd731e"
+		in_variables = {
+			vector = {
+				node = "232c0c99-f795-45b8-aa07-ecaf1aff16aa"
+				type = "vector3"
+				variable = "velocity"
+			}
+		}
+		out_variables = {
+			x = {
+				type = "float"
+			}
+		}
+		type = "vector_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "11111111-2222-3333-4444-555555555555"
+		type = "unit_spawned"
+		variable_values = {
+			unit = null
+		}
+	}
+]

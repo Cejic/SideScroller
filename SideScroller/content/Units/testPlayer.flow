@@ -1,0 +1,475 @@
+
+nodes = [
+	{
+		id = "4ff6a6cb-0d48-427f-a8b6-3fde0021253a"
+		in_variables = {
+			actor_index = {
+				type = "float"
+			}
+			actor_name = {
+				type = "string"
+			}
+			unit = {
+				node = "11111111-2222-3333-4444-555555555555"
+				type = "unit"
+				variable = "unit"
+			}
+		}
+		out_variables = {
+			actor = {
+				type = "actor"
+			}
+		}
+		type = "get_unit_actor"
+		variable_values = {
+			actor = null
+			actor_index = 1
+			actor_name = null
+			unit = null
+		}
+	}
+	{
+		id = "1b7f4ea9-c7ef-4dab-9b79-5584dd63f7ce"
+		in_variables = {
+			button_name = {
+				type = "string"
+			}
+			device = {
+				type = "string"
+			}
+			device_number = {
+				type = "float"
+			}
+		}
+		out_events = {
+			held = [
+				{
+					event = 0
+					id = "1dbd0dad-1883-4a22-bf8a-404d0ce668bd:0"
+					node = "1dbd0dad-1883-4a22-bf8a-404d0ce668bd"
+				}
+			]
+			pressed = [
+				{
+					event = 1
+					id = "1dbd0dad-1883-4a22-bf8a-404d0ce668bd:1"
+					node = "1dbd0dad-1883-4a22-bf8a-404d0ce668bd"
+				}
+			]
+		}
+		type = "keyboard_button"
+		variable_values = {
+			button_name = "a"
+			device = "keyboard"
+			device_number = 0
+			value = null
+		}
+	}
+	{
+		id = "1dbd0dad-1883-4a22-bf8a-404d0ce668bd"
+		in_event_index = [
+			"Continue Action"
+			"Start Action"
+		]
+		in_variables = {
+			character = {
+				node = "4ff6a6cb-0d48-427f-a8b6-3fde0021253a"
+				type = "actor"
+				variable = "actor"
+			}
+			max_speed = {
+				node = "4ec5ac43-5294-43b4-9dbe-a636c095dbc6"
+				type = "float"
+				variable = "value"
+			}
+			speed_scaling = {
+				node = "ac141722-3362-4d7f-b5d1-9703b90d1a4c"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_event_index = [
+		]
+		type = "flow_subroutine"
+		variable_values = {
+			character = null
+			flow = "script/Physics Movement (with Max)"
+			max_speed = null
+			speed_scaling = null
+		}
+	}
+	{
+		id = "3a108fe7-2372-4dd3-8fec-1511f8f6bd4e"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = -1
+			value = null
+		}
+	}
+	{
+		id = "4ec5ac43-5294-43b4-9dbe-a636c095dbc6"
+		in_variables = {
+			a = {
+				node = "3a108fe7-2372-4dd3-8fec-1511f8f6bd4e"
+				type = "float"
+				variable = "value"
+			}
+			b = {
+				node = "afb76513-73e2-4b2b-98be-82183fc5451f"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_times_numeric"
+		variable_values = {
+			a = null
+			b = null
+			value = null
+		}
+	}
+	{
+		id = "afb76513-73e2-4b2b-98be-82183fc5451f"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 5
+			value = null
+		}
+	}
+	{
+		id = "5fdbcfd0-9bc6-4e18-8e47-bee7c1d025bd"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = -1
+			value = null
+		}
+	}
+	{
+		id = "ac141722-3362-4d7f-b5d1-9703b90d1a4c"
+		in_variables = {
+			a = {
+				node = "5fdbcfd0-9bc6-4e18-8e47-bee7c1d025bd"
+				type = "float"
+				variable = "value"
+			}
+			b = {
+				node = "51dcbc9e-8e7b-4093-9edd-f3a4277c5772"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_times_numeric"
+		variable_values = {
+			a = null
+			b = null
+			value = null
+		}
+	}
+	{
+		id = "51dcbc9e-8e7b-4093-9edd-f3a4277c5772"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 10
+			value = null
+		}
+	}
+	{
+		id = "e6795767-efd0-4404-91da-1bdadab73e13"
+		in_event_index = [
+			"Continue Action"
+			"Start Action"
+		]
+		in_variables = {
+			character = {
+				node = "c1dfcbd3-ceb4-49c7-9dea-3d03809ff715"
+				type = "actor"
+				variable = "actor"
+			}
+			max_speed = {
+				node = "afb76513-73e2-4b2b-98be-82183fc5451f"
+				type = "float"
+				variable = "value"
+			}
+			speed_scaling = {
+				node = "51dcbc9e-8e7b-4093-9edd-f3a4277c5772"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_event_index = [
+		]
+		type = "flow_subroutine"
+		variable_values = {
+			character = null
+			flow = "script/Physics Movement (with Max)"
+			max_speed = null
+			speed_scaling = null
+		}
+	}
+	{
+		id = "c1dfcbd3-ceb4-49c7-9dea-3d03809ff715"
+		in_variables = {
+			actor_index = {
+				type = "float"
+			}
+			actor_name = {
+				type = "string"
+			}
+			unit = {
+				node = "11111111-2222-3333-4444-555555555555"
+				type = "unit"
+				variable = "unit"
+			}
+		}
+		out_variables = {
+			actor = {
+				type = "actor"
+			}
+		}
+		type = "get_unit_actor"
+		variable_values = {
+			actor = null
+			actor_index = 1
+			actor_name = null
+			unit = null
+		}
+	}
+	{
+		id = "b1e69fb7-8f53-472d-ad46-e372bf67d1d7"
+		in_variables = {
+			button_name = {
+				type = "string"
+			}
+			device = {
+				type = "string"
+			}
+			device_number = {
+				type = "float"
+			}
+		}
+		out_events = {
+			held = [
+				{
+					event = 0
+					id = "e6795767-efd0-4404-91da-1bdadab73e13:0"
+					node = "e6795767-efd0-4404-91da-1bdadab73e13"
+				}
+			]
+			pressed = [
+				{
+					event = 1
+					id = "e6795767-efd0-4404-91da-1bdadab73e13:1"
+					node = "e6795767-efd0-4404-91da-1bdadab73e13"
+				}
+			]
+		}
+		type = "keyboard_button"
+		variable_values = {
+			button_name = "d"
+			device = "keyboard"
+			device_number = 0
+			value = null
+		}
+	}
+	{
+		id = "d00e1398-66be-414f-8123-f5f27acdbbca"
+		in_variables = {
+			actor_index = {
+				type = "float"
+			}
+			actor_name = {
+				type = "string"
+			}
+			unit = {
+				node = "11111111-2222-3333-4444-555555555555"
+				type = "unit"
+				variable = "unit"
+			}
+		}
+		out_variables = {
+			actor = {
+				type = "actor"
+			}
+		}
+		type = "get_unit_actor"
+		variable_values = {
+			actor = null
+			actor_index = 1
+			actor_name = null
+			unit = null
+		}
+	}
+	{
+		id = "65967154-7c82-4b88-9d80-539df0f59bc7"
+		in_variables = {
+			x = {
+				node = "ac2cc5a7-a9ae-42e6-baac-b3b26ffc194b"
+				type = "float"
+				variable = "value"
+			}
+			y = {
+				node = "ac2cc5a7-a9ae-42e6-baac-b3b26ffc194b"
+				type = "float"
+				variable = "value"
+			}
+			z = {
+				node = "672c7f6f-d8d0-44db-8f2d-78972940c101"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			vector = {
+				type = "vector3"
+			}
+		}
+		type = "vector_from_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "ac2cc5a7-a9ae-42e6-baac-b3b26ffc194b"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 0
+			value = null
+		}
+	}
+	{
+		id = "672c7f6f-d8d0-44db-8f2d-78972940c101"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 50
+			value = null
+		}
+	}
+	{
+		id = "6ce71747-78a9-4774-845e-5336d9e7a8d8"
+		in_variables = {
+			actor = {
+				node = "d00e1398-66be-414f-8123-f5f27acdbbca"
+				type = "actor"
+				variable = "actor"
+			}
+			at = {
+				type = "vector3"
+			}
+			mass = {
+				node = "0183b092-2a12-4c41-8dd3-8df53b0f5681"
+				type = "float"
+				variable = "value"
+			}
+			unit = {
+				node = "11111111-2222-3333-4444-555555555555"
+				type = "unit"
+				variable = "unit"
+			}
+			velocity = {
+				node = "65967154-7c82-4b88-9d80-539df0f59bc7"
+				type = "vector3"
+				variable = "vector"
+			}
+		}
+		type = "push_actor"
+		variable_values = {
+			actor = null
+			at = null
+			mass = null
+			unit = null
+			velocity = null
+		}
+	}
+	{
+		id = "0183b092-2a12-4c41-8dd3-8df53b0f5681"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 10
+			value = null
+		}
+	}
+	{
+		id = "447d6f53-d0f8-4914-9cd3-10054cc36aac"
+		in_variables = {
+			button_name = {
+				type = "string"
+			}
+			device = {
+				type = "string"
+			}
+			device_number = {
+				type = "float"
+			}
+		}
+		out_events = {
+			pressed = [
+				{
+					event = 0
+					id = "6ce71747-78a9-4774-845e-5336d9e7a8d8:0"
+					node = "6ce71747-78a9-4774-845e-5336d9e7a8d8"
+				}
+			]
+		}
+		type = "keyboard_button"
+		variable_values = {
+			button_name = "w"
+			device = "keyboard"
+			device_number = 0
+			value = null
+		}
+	}
+	{
+		id = "11111111-2222-3333-4444-555555555555"
+		type = "unit_spawned"
+		variable_values = {
+			unit = null
+		}
+	}
+]

@@ -1,0 +1,18 @@
+
+actors = [
+	{
+		enabled = true
+		mass = 0
+		name = "terrain"
+		node = "terrain"
+		shapes = [
+			{
+				material = "default"
+				shape = "terrain"
+				template = "character_trigger"
+				type = "height_field"
+			}
+		]
+		template = "static"
+	}
+]

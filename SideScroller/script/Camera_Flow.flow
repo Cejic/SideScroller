@@ -1,0 +1,420 @@
+
+nodes = [
+	{
+		id = "1cab0899-f862-4648-aa1d-2e1a3e7c0adc"
+		in_variables = {
+			camera = {
+				type = "camera"
+			}
+			unit = {
+				node = "994e7c4f-a434-4c5e-a874-ce9fd9aca0e6"
+				type = "unit"
+				variable = "unit"
+			}
+		}
+		out_variables = {
+			position = {
+				type = "vector3"
+			}
+		}
+		type = "get_camera_world_position"
+		variable_values = {
+			camera = null
+			position = null
+			unit = null
+		}
+	}
+	{
+		id = "675aa3e1-8fed-4e24-9e6f-ed914b1022f9"
+		in_variables = {
+			actor_index = {
+				type = "float"
+			}
+			actor_name = {
+				type = "string"
+			}
+			unit = {
+				node = "f3528549-0523-4ea3-868c-53ba185055d2"
+				type = "unit"
+				variable = "unit"
+			}
+		}
+		out_variables = {
+			actor = {
+				type = "actor"
+			}
+		}
+		type = "get_unit_actor"
+		variable_values = {
+			actor = null
+			actor_index = 1
+			actor_name = null
+			unit = null
+		}
+	}
+	{
+		id = "f3528549-0523-4ea3-868c-53ba185055d2"
+		out_variables = {
+			unit = {
+				type = "unit"
+			}
+		}
+		type = "external_input_unit"
+		variable_values = {
+			name = "Player Unit"
+			unit = null
+		}
+	}
+	{
+		id = "994e7c4f-a434-4c5e-a874-ce9fd9aca0e6"
+		out_variables = {
+			unit = {
+				type = "unit"
+			}
+		}
+		type = "external_input_unit"
+		variable_values = {
+			name = "Camera Unit"
+			unit = null
+		}
+	}
+	{
+		id = "8f0b5cc4-807f-4027-9621-7b72ffc3fb0c"
+		in_variables = {
+			actor = {
+				node = "675aa3e1-8fed-4e24-9e6f-ed914b1022f9"
+				type = "actor"
+				variable = "actor"
+			}
+		}
+		out_variables = {
+			position = {
+				type = "vector3"
+			}
+		}
+		type = "get_actor_position"
+		variable_values = {
+			actor = null
+			position = null
+		}
+	}
+	{
+		id = "62e319fe-0c91-4a5a-9874-9e31477daab5"
+		in_variables = {
+			vector = {
+				node = "8f0b5cc4-807f-4027-9621-7b72ffc3fb0c"
+				type = "vector3"
+				variable = "position"
+			}
+		}
+		out_variables = {
+			x = {
+				type = "float"
+			}
+		}
+		type = "vector_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "a170e87e-bbe2-4eab-a960-62d91170096a"
+		in_variables = {
+			vector = {
+				node = "1cab0899-f862-4648-aa1d-2e1a3e7c0adc"
+				type = "vector3"
+				variable = "position"
+			}
+		}
+		out_variables = {
+			x = {
+				type = "float"
+			}
+		}
+		type = "vector_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "375adaa9-9a5b-4ae6-971b-1963a41fb9b1"
+		in_variables = {
+			a = {
+				node = "62e319fe-0c91-4a5a-9874-9e31477daab5"
+				type = "float"
+				variable = "x"
+			}
+			b = {
+				node = "a170e87e-bbe2-4eab-a960-62d91170096a"
+				type = "float"
+				variable = "x"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_minus_numeric"
+		variable_values = {
+			a = null
+			b = null
+			value = null
+		}
+	}
+	{
+		id = "01d8111b-45dd-4282-a1fd-d8e39f96ba82"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 7.5
+			value = null
+		}
+	}
+	{
+		id = "276a8986-3346-4dc1-a73e-9e29770b6bd1"
+		out_events = {
+			out = [
+				{
+					event = 0
+					id = "52a2b08b-4767-4630-80a1-5cd3ae94c736:0"
+					node = "52a2b08b-4767-4630-80a1-5cd3ae94c736"
+				}
+			]
+		}
+		type = "external_event"
+		variable_values = {
+			event_name = "Position Update Event"
+		}
+	}
+	{
+		id = "69b83e98-992e-4e00-ada3-324f9ca49f21"
+		in_variables = {
+			numeric = {
+				node = "375adaa9-9a5b-4ae6-971b-1963a41fb9b1"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "absolute"
+		variable_values = {
+			numeric = null
+			value = null
+		}
+	}
+	{
+		id = "52a2b08b-4767-4630-80a1-5cd3ae94c736"
+		in_variables = {
+			a = {
+				node = "69b83e98-992e-4e00-ada3-324f9ca49f21"
+				type = "float"
+				variable = "value"
+			}
+			b = {
+				node = "01d8111b-45dd-4282-a1fd-d8e39f96ba82"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_events = {
+			greater_or_equal = [
+				{
+					event = 0
+					id = "8ceb90c6-3746-4dd0-a1a8-be18653c45c5:0"
+					node = "8ceb90c6-3746-4dd0-a1a8-be18653c45c5"
+				}
+			]
+		}
+		type = "compare_node"
+		variable_values = {
+			a = null
+			b = null
+		}
+	}
+	{
+		id = "8ceb90c6-3746-4dd0-a1a8-be18653c45c5"
+		in_variables = {
+			camera = {
+				type = "camera"
+			}
+			delta_position = {
+				type = "vector3"
+			}
+			unit = {
+				node = "994e7c4f-a434-4c5e-a874-ce9fd9aca0e6"
+				type = "unit"
+				variable = "unit"
+			}
+			velocity = {
+				node = "fdd4464a-5434-4e64-8a1d-915b005bc3e2"
+				type = "vector3"
+				variable = "vector"
+			}
+		}
+		type = "move_camera"
+		variable_values = {
+			camera = null
+			delta_position = null
+			unit = null
+			velocity = null
+		}
+	}
+	{
+		id = "fdd4464a-5434-4e64-8a1d-915b005bc3e2"
+		in_variables = {
+			x = {
+				node = "fd40d77f-84e0-4c7c-91c5-8edc63e6d538"
+				type = "float"
+				variable = "value"
+			}
+			y = {
+				node = "9f919804-2b8c-4880-8cef-50005fcf42a4"
+				type = "float"
+				variable = "value"
+			}
+			z = {
+				node = "9f919804-2b8c-4880-8cef-50005fcf42a4"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			vector = {
+				type = "vector3"
+			}
+		}
+		type = "vector_from_components"
+		variable_values = {
+			vector = null
+			x = null
+			y = null
+			z = null
+		}
+	}
+	{
+		id = "9f919804-2b8c-4880-8cef-50005fcf42a4"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 0
+			value = null
+		}
+	}
+	{
+		id = "ecb149f5-7766-4671-9494-cda6416b2cd2"
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_data"
+		variable_values = {
+			set = 5
+			value = null
+		}
+	}
+	{
+		id = "8676aa83-0595-4bc9-a1c3-af599e013850"
+		in_variables = {
+			a = {
+				node = "69b83e98-992e-4e00-ada3-324f9ca49f21"
+				type = "float"
+				variable = "value"
+			}
+			b = {
+				node = "ecb149f5-7766-4671-9494-cda6416b2cd2"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_minus_numeric"
+		variable_values = {
+			a = null
+			b = null
+			value = null
+		}
+	}
+	{
+		id = "f57635c4-992c-419f-97b0-31c4c5c6be97"
+		in_variables = {
+			a = {
+				node = "375adaa9-9a5b-4ae6-971b-1963a41fb9b1"
+				type = "float"
+				variable = "value"
+			}
+			b = {
+				node = "69b83e98-992e-4e00-ada3-324f9ca49f21"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_divided_by_numeric"
+		variable_values = {
+			a = null
+			b = null
+			value = null
+		}
+	}
+	{
+		id = "fd40d77f-84e0-4c7c-91c5-8edc63e6d538"
+		in_variables = {
+			a = {
+				node = "f57635c4-992c-419f-97b0-31c4c5c6be97"
+				type = "float"
+				variable = "value"
+			}
+			b = {
+				node = "8676aa83-0595-4bc9-a1c3-af599e013850"
+				type = "float"
+				variable = "value"
+			}
+		}
+		out_variables = {
+			value = {
+				type = "float"
+			}
+		}
+		type = "numeric_times_numeric"
+		variable_values = {
+			a = null
+			b = null
+			value = null
+		}
+	}
+	{
+		id = "11111111-2222-3333-4444-555555555555"
+		type = "unit_spawned"
+		variable_values = {
+			unit = null
+		}
+	}
+]
