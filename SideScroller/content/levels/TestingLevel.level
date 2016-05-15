@@ -242,7 +242,6 @@ editor_metadata = {
 				OutVariables = [
 				]
 				SetUnit = {
-					Id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
 				}
 				Title = "Level Unit"
 				Type = "content/Units/testPlayer"
@@ -797,43 +796,6 @@ editor_metadata = {
 		{
 			Cameras = {
 			}
-			Id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
-			Layer = "Default"
-			Lights = {
-			}
-			Materials = {
-			}
-			Name = "testPlayer"
-			OverridePoses = {
-			}
-			Pivot = {
-				X = 0
-				Y = 0
-				Z = 0
-			}
-			Pos = {
-				X = 0
-				Y = 0
-				Z = 2.5
-			}
-			Rot = {
-				W = -1
-				X = 0
-				Y = 0
-				Z = 0
-			}
-			Scl = {
-				X = 1
-				Y = 1
-				Z = 1
-			}
-			ScriptData = {
-			}
-			Type = "content/Units/testPlayer"
-		}
-		{
-			Cameras = {
-			}
 			Id = "29165620-a98c-4705-b981-4689233c09e4"
 			Layer = "Default"
 			Lights = {
@@ -979,6 +941,81 @@ editor_metadata = {
 			}
 			Type = "core/units/primitives/cone_primitive"
 		}
+		{
+			Cameras = {
+			}
+			Id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+				material = "content/lambert2SG1"
+			}
+			Name = "testPlayer"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 2.5
+			}
+			Rot = {
+				W = -1
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Scl = {
+				X = 1
+				Y = 1
+				Z = 1
+			}
+			ScriptData = {
+			}
+			Type = "content/Units/testPlayer"
+		}
+		{
+			Cameras = {
+			}
+			Id = "37a8547f-aa8b-4f5c-98e4-1f2913f99be6"
+			Layer = "Default"
+			Lights = {
+			}
+			Materials = {
+			}
+			Name = "shrooman_static"
+			OverridePoses = {
+			}
+			Pivot = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Pos = {
+				X = 0
+				Y = 0
+				Z = 0
+			}
+			Rot = {
+				W = 6.12303176911189E-17
+				X = 0
+				Y = 0
+				Z = 1
+			}
+			Scl = {
+				X = 10
+				Y = 10
+				Z = 10
+			}
+			ScriptData = {
+			}
+			Type = "content/shrooman_static"
+		}
 	]
 	Volumes = [
 	]
@@ -1064,9 +1101,7 @@ flow = {
 			}
 			type = "level_unit"
 			variable_values = {
-				set_unit = {
-					id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
-				}
+				set_unit = null
 				unit = null
 			}
 		}
@@ -1541,36 +1576,6 @@ units = [
 		}
 		data = {
 		}
-		id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
-		lights = {
-		}
-		material = ""
-		materials = {
-		}
-		name = "testPlayer"
-		pos = [
-			0
-			0
-			2.5
-		]
-		rot = [
-			0
-			0
-			0
-			-1
-		]
-		scl = [
-			1
-			1
-			1
-		]
-		type = "content/Units/testPlayer"
-	}
-	{
-		cameras = {
-		}
-		data = {
-		}
 		id = "29165620-a98c-4705-b981-4689233c09e4"
 		lights = {
 		}
@@ -1685,6 +1690,67 @@ units = [
 			1
 		]
 		type = "core/units/primitives/cone_primitive"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "8b1f4e68-d2bb-4841-b5eb-63ddba9d16c2"
+		lights = {
+		}
+		material = ""
+		materials = {
+			material = "content/lambert2SG1"
+		}
+		name = "testPlayer"
+		pos = [
+			0
+			0
+			2.5
+		]
+		rot = [
+			0
+			0
+			0
+			-1
+		]
+		scl = [
+			1
+			1
+			1
+		]
+		type = "content/Units/testPlayer"
+	}
+	{
+		cameras = {
+		}
+		data = {
+		}
+		id = "37a8547f-aa8b-4f5c-98e4-1f2913f99be6"
+		lights = {
+		}
+		material = ""
+		materials = {
+		}
+		name = "shrooman_static"
+		pos = [
+			0
+			0
+			0
+		]
+		rot = [
+			0
+			0
+			1
+			6.12303176911189E-17
+		]
+		scl = [
+			10
+			10
+			10
+		]
+		type = "content/shrooman_static"
 	}
 ]
 volumes = [

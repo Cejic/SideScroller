@@ -1,0 +1,20 @@
+
+_data_root_version = 1
+_id = "4d6fc098-570a-41d8-bbdb-b28e9c6b6c70"
+_name = "content/shrooman_static"
+anim_controller_ref = {
+	_id = "3cf93db7-84ff-4c85-b963-a5ec765c98f4"
+	ref_filename = null
+	ref_id = null
+}
+anim_skeleton_ref = {
+	_id = "16bfffd9-5c4e-422e-8dd1-449e85dee752"
+	ref_filename = null
+	ref_id = null
+}
+dcc_asset_ref = {
+	_id = "5f1756eb-593e-4996-b92c-0c9863045894"
+	ref_filename = "content/shrooman_static.dcc_asset"
+	ref_id = null
+}
+old_unit_name = "content/shrooman_static"

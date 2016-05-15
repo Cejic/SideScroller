@@ -1,0 +1,25 @@
+
+materials = {
+	blinn1 = "content/blinn1"
+	lambert2SG1 = "content/lambert2SG1"
+}
+renderables = {
+	"shrooman:pPlane1" = {
+		always_keep = false
+		culling = "bounding_volume"
+		light_baking = "none"
+		occluder = false
+		shadow_caster = true
+		surface_queries = false
+		viewport_visible = true
+	}
+	"shrooman1:pCylinder9" = {
+		always_keep = false
+		culling = "bounding_volume"
+		light_baking = "none"
+		occluder = false
+		shadow_caster = true
+		surface_queries = false
+		viewport_visible = true
+	}
+}
